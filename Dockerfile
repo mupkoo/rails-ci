@@ -3,8 +3,6 @@ MAINTAINER Mirko Akov
 
 # Initial setup
 RUN \
-  curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - && \
-  echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list && \
   curl -sL https://deb.nodesource.com/setup_8.x | bash - && \
   apt-get update -yq && \
   apt-get install -y \
@@ -14,8 +12,7 @@ RUN \
     nodejs \
     python-software-properties \
     software-properties-common \
-    unzip \
-    yarn
+    unzip
 
 # Install Chrome
 RUN \
@@ -31,6 +28,13 @@ RUN \
   unzip /tmp/chromedriver.zip chromedriver -d /usr/bin/ && \
   rm /tmp/chromedriver.zip && \
   chmod ugo+rx /usr/bin/chromedriver
+
+# Install yarn
+RUN \
+  wget -q -O - https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - && \
+  echo "deb https://dl.yarnpkg.com/debian/ stable main" > /etc/apt/sources.list.d/yarn.list && \
+  apt-get update -yq && \
+  apt-get install -y yarn
 
 # Install dpl and heroku-cli
 RUN \
