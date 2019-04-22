@@ -3,7 +3,7 @@ MAINTAINER Mirko Akov
 
 # Initial setup
 RUN \
-  curl -sL https://deb.nodesource.com/setup_8.x | bash - && \
+  curl -sL https://deb.nodesource.com/setup_10.x | bash - && \
   apt-get update -yq && \
   apt-get install -y \
     apt-transport-https \
