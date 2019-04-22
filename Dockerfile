@@ -1,4 +1,4 @@
-FROM ruby:2.4.3
+FROM ruby:2.6.0
 MAINTAINER Mirko Akov
 
 # Initial setup
