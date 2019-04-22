@@ -10,7 +10,6 @@ RUN \
     build-essential \
     cmake \
     nodejs \
-    python-software-properties \
     software-properties-common \
     unzip \
     postgresql-client
