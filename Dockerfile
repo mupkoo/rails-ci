@@ -12,7 +12,8 @@ RUN \
     nodejs \
     python-software-properties \
     software-properties-common \
-    unzip
+    unzip \
+    postgresql-client
 
 # Install Chrome
 RUN \
