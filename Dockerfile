@@ -1,18 +1,18 @@
-FROM ruby:2.4.3
+FROM ruby:2.6.0
 MAINTAINER Mirko Akov
 
 # Initial setup
 RUN \
-  curl -sL https://deb.nodesource.com/setup_8.x | bash - && \
+  curl -sL https://deb.nodesource.com/setup_10.x | bash - && \
   apt-get update -yq && \
   apt-get install -y \
     apt-transport-https \
     build-essential \
     cmake \
     nodejs \
-    python-software-properties \
     software-properties-common \
-    unzip
+    unzip \
+    postgresql-client
 
 # Install Chrome
 RUN \
